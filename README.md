@@ -1,4 +1,4 @@
-# The code to synthesize Electrocardio Panorama
+# Electrocardio Panorama
 
 This repository contains the code and datasets for our IJCAI 2021 paper *Electrocardio Panorama: Synthesizing New ECG views with Self-supervision*.
 
