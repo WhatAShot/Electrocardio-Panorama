@@ -10,7 +10,7 @@ Please cite the paper if the codes or dataset labels are helpful:
 
     @inproceedings{chen2021Electrocardio,
         author = {Chen, Jintai and Zheng, Xiangshang, and Yu, Hongyun and Chen, Danny Z and Wu, Jian},
-        title = {Electrocardio Panorama: Synthesizing New ECG views with Self-supervision},
+        title = {{Electrocardio Panorama: Synthesizing New ECG views with Self-supervision}},
         booktitle = {IJCAI},
         year = {2021}
     }
