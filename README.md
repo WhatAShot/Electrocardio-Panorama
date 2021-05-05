@@ -1,2 +1,1 @@
-# Electrocardio-Panorama
-Electrocardio Panorama: Synthesizing New ECG views with Self-supervision
+# The code of the paper *Electrocardio Panorama: Synthesizing New ECG views with Self-supervision*
