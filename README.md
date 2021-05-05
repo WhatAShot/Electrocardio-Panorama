@@ -1,6 +1,6 @@
 # The code to synthesize Electrocardio Panorama
 
-This project contains the code and datasets about the paper *Electrocardio Panorama: Synthesizing New ECG views with Self-supervision*.
+This repository contains the code and datasets for our IJCAI 2021 paper *Electrocardio Panorama: Synthesizing New ECG views with Self-supervision*.
 
 We propose a new concept called **Electrocardio Panorama**, which allows doctors to observe the ECG signals from any viewpoints and only requires one or few ECG views as input.
 
