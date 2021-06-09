@@ -51,7 +51,7 @@ class BasicBlock(nn.Module):
         out = self.relu(out)
         out = self.dropout(out)
         out = self.conv2(out)
-        if out.shape[1] != residual.shape[1]:  # 若通道数不一致
+        if out.shape[1] != residual.shape[1]:  # if num of channel is not same
             residual = self.residual_conv(residual)
 
         out += residual
@@ -60,13 +60,12 @@ class BasicBlock(nn.Module):
         return out
 
 
-class ModelV9(nn.Module):
-    '''
-    在model v3的基础上增加了多导联
-    '''
-
+class Model_nefnet(nn.Module):
+    """
+        Nef-Net implement
+    """
     def __init__(self, theta_encoder_len=1, lead_num=1):
-        super(ModelV9, self).__init__()
+        super(Model_nefnet, self).__init__()
 
         self.lead_num = lead_num
 
@@ -104,8 +103,6 @@ class ModelV9(nn.Module):
             DoubleConv(256 * 1, 128),
             nn.Upsample(scale_factor=2, mode='linear', align_corners=False),
             DoubleConv(128, 64),
-            # nn.Upsample(scale_factor=2, mode='linear', align_corners=False),
-            # DoubleConv(32, 16),
             nn.Conv1d(64, 1, 3, padding=1)
         )
 
@@ -152,9 +149,6 @@ class ModelV9(nn.Module):
         z2_mean = torch.mean(torch.stack(z2_list, dim=0), dim=0)  # [B, 128, 128]
 
         latent_all = torch.cat([z1_mean, z2_mean], dim=1)  # [B, 256 * 1, 128]
-
-        # if phase == 'gen':
-        #     return z1_mean, z2_mean
 
         # change z1 to shuffle choice
         # shuffle_z1 = self.shuffle_patient_lead(z1_mean, mode='patient')

@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 
 
-def roi_pooling(input, rois, size=8, spatial_scale=1.0):  # pytorch version use for loop !!!
+def roi_pooling(input, rois, size=8, spatial_scale=1.0):  # pytorch version using loop !!!
     '''
     :param input: [B, channels, length]
     :param rois:  [B, 5, 2]
@@ -18,7 +18,6 @@ def roi_pooling(input, rois, size=8, spatial_scale=1.0):  # pytorch version use 
     batch_size, num_rois = rois.size(0), rois.size(1)
     rois.mul_(spatial_scale)
     rois = rois.long()
-    # print(rois)
     for i in range(batch_size):
         extract_rois = []
         for j in range(num_rois):
@@ -36,7 +35,7 @@ def roi_pooling(input, rois, size=8, spatial_scale=1.0):  # pytorch version use 
     return output
 
 
-def roi_algin(input, rois, size=8, spatial_scale=1.0):  # pytorch version use for loop !!!
+def roi_algin(input, rois, size=8, spatial_scale=1.0):  # pytorch version using loop !!!
     '''
     :param input: [B, channels, length]
     :param rois:  [B, 5, 2]

@@ -1,4 +1,4 @@
-from dataset import *
+from dataset import build_dataset
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import WeightedRandomSampler
 from solver import Solver
@@ -28,12 +28,8 @@ def main(cfg):
     test_dl = DataLoader(test_dataset, batch_size=32, num_workers=8, drop_last=True)
 
     solver = Solver(cfg)
-    if cfg.MODEL.model in ['mlp', 'alex', 'lstm']:
-        solver.train_for_other_method(train_dl, test_dl)
-    # elif cfg.MODEL.model in ['clf_resnet']:
-    #     solver.train_for_classify(train_dl, test_dl)
-    else:
-        solver.train(train_dl, test_dl)
+
+    solver.train(train_dl, test_dl)
 
 
 if __name__ == '__main__':

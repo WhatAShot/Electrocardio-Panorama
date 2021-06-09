@@ -26,12 +26,6 @@ class ThetaEncoder(nn.Module):
             out_all += [sin, cos]
 
         after_encode = torch.stack(out_all, dim=-1).view(b, lead_num, -1)
-        # sum_theta = theta[:, 0:1] + theta[:, 1:2]
-        # sub_theta = theta[:, 0:1] - theta[:, 1:2]
-        # before_encode = torch.cat([theta, sum_theta, sub_theta], dim=1)
-        # sin = torch.sin(before_encode)
-        # cos = torch.cos(before_encode)
-        # after_encode = torch.stack([before_encode, sin, cos], dim=-1).view(theta.shape[0], -1)
         return after_encode
 
 

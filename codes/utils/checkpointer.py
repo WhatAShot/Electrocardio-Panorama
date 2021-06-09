@@ -1,8 +1,6 @@
 import os
 import torch
 from collections import OrderedDict
-# from torch.nn import DataParallel
-import torch.nn as nn
 
 
 class CheckPointer:
@@ -106,7 +104,7 @@ if __name__ == '__main__':
     model = resnet18()
     from torch import nn
     model = nn.DataParallel(model)
-    save_dir = '/data/lxc/output/123/'
+    save_dir = '/data/zxs/output/123/'
     ckpt = CheckPointer(model, save_dir=save_dir)
     # ckpt.save('model_epoch_010')
     ckpt.load(resume_iter=10)
