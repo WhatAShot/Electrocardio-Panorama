@@ -74,7 +74,6 @@ def losswrapper(predict, predict_shuffle_p, predict_shuffle_l, target, cfg, rest
     loss1 = loss_f_1(loss1_gt, predict_shuffle_p) if 1 in cfg.SOLVER.loss_using else 0.
     loss2 = loss_f_1(loss2_gt, predict_shuffle_l) if 2 in cfg.SOLVER.loss_using else 0.
     loss3 = loss_f_2(predict, target) if 3 in cfg.SOLVER.loss_using else 0.
-    # loss4 = 0. if 4 in cfg.SOLVER.loss_using else 0.  # MI loss
 
     if rest_out is not None and rest_view is not None:
         loss_unsperv = loss_f_2(rest_out, rest_view)
@@ -86,7 +85,6 @@ def losswrapper(predict, predict_shuffle_p, predict_shuffle_l, target, cfg, rest
         return loss, loss1*factor[0], loss2 * factor[1], loss3 * factor[2], loss_unsperv
     else:  # train
         return loss, loss1*factor[0], loss2 * factor[1], loss3 * factor[2]
-    # return (loss1 + loss2 + loss3 + loss4) / len(cfg.SOLVER.loss_using)
 
 
 class MSELead(nn.Module):

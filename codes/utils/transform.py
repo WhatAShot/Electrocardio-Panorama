@@ -13,8 +13,6 @@ class Scale(object):
         return {'cardiac_cycle': heartbeat,
                 'label': label,
                 'beat_type': sample['beat_type'],
-                # 'cardiac_cycle_other_lead': sample['cardiac_cycle_other_lead'],
-                # 'other_lead_name': sample['other_lead_name']
                 }
 
 

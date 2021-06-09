@@ -30,10 +30,8 @@ class BasicBlock(nn.Module):
     def __init__(self, inplanes, planes, stride=1, downsample=None, groups=1):
         super(BasicBlock, self).__init__()
         self.conv1 = conv3x3(inplanes, planes, stride, groups=groups)
-        # self.bn1 = nn.BatchNorm1d(planes)
         self.relu = nn.ReLU(inplace=True)
         self.conv2 = conv3x3(planes, planes, groups=groups)
-        # self.bn2 = nn.BatchNorm1d(planes)
         self.downsample = downsample
         self.stride = stride
         self.dropout = nn.Dropout(0.2)
@@ -230,11 +228,3 @@ if __name__ == '__main__':
     # hl.build_graph(net, x)
     with SummaryWriter(comment='resnet34') as w:
         w.add_graph(net, (x,))
-    # target = torch.sigmoid(torch.randn(4, 55))
-    # zeros = torch.zeros_like(target)
-    # ones = torch.zeros_like(target)
-    # target = torch.where(target > 0.5, ones, zeros)
-    # m = resnet34_jintai_mixup(verbose=True, in_channel=8)
-    # out = m(x, target)
-    # print(out[0].size(), out[1].size())
-    # from torchvision.models import resnet

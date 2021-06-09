@@ -1,8 +1,5 @@
 import os
-from torch.utils.data import Dataset, DataLoader
-from sklearn.model_selection import train_test_split
-import pandas as pd
-import wfdb
+from torch.utils.data import Dataset
 import numpy as np
 import json
 import random
@@ -58,7 +55,6 @@ class PTBV2(Dataset):
         if self.cfg.MODEL.jitter_factor > 0 and self.phase == 'train':
             theta_ = self.angle_jitter(theta_, self.cfg.MODEL.jitter_factor)
 
-        # 改成从8个监督导联中取input和ouput的监督，剩下4个导联不作监督
         supervision_lead_lamb, supervision_lead_chest = [2, 4, 6, 7], [0, 1, 8, 9]
         supervision_lead = supervision_lead_lamb + supervision_lead_chest
         unsupervision_lead = [x for x in range(0, 12) if x not in supervision_lead]
@@ -102,10 +98,6 @@ class PTBV2(Dataset):
                 select_index = [2, 6, 0, 8, 10]
                 unsupervision_lead = [4]
                 supervision_lead = [x for x in range(0, 12) if x not in select_index + unsupervision_lead]
-            elif self.cfg.DATA.super_mode == '_cr_561':
-                select_index = [2, 6, 0, 8, 10]
-                unsupervision_lead = [11]
-                supervision_lead = [x for x in range(0, 12) if x not in select_index + unsupervision_lead]
             elif self.cfg.DATA.super_mode == '_570':
                 select_index = [2, 6, 0, 8, 10]
                 unsupervision_lead = []
@@ -128,9 +120,6 @@ class PTBV2(Dataset):
                 supervision_lead = [x for x in range(0, 12) if x not in select_index + unsupervision_lead]
             elif self.cfg.DATA.super_mode == '_192':
                 unsupervision_lead = [4, 11]
-                supervision_lead = [x for x in range(0, 12) if x not in select_index + unsupervision_lead]
-            elif self.cfg.DATA.super_mode == 'val_192':
-                unsupervision_lead = [4, 3]
                 supervision_lead = [x for x in range(0, 12) if x not in select_index + unsupervision_lead]
         else:
             raise KeyError("WORANG lead num: {}".format(self.cfg.DATA.lead_num))
@@ -228,37 +217,3 @@ class HeartBeat(object):
     def __init__(self, data, rois_list):
         self.data = data
         self.rois_list = rois_list
-
-
-if __name__ == '__main__':
-    train_txt_path = '/data/yhy/project/ecg_generation/dataset/ptb_train.txt'
-    test_txt_path = '/data/yhy/project/ecg_generation/dataset/ptb_test.txt'
-    data_root = '/data/share/ecg_data/ptb-diag_preprocess'
-    train_pkl_path = '/data/share/ecg_data/ptb_pkl_data/train_ptb.pkl'
-    test_pkl_path = '/data/share/ecg_data/ptb_pkl_data/test_ptb.pkl'
-    ds_train = HeartBeatList(train_txt_path, data_root, train_pkl_path)
-    ds_test = HeartBeatList(test_txt_path, data_root, test_pkl_path)
-    #
-    from config import cfg
-    from config import cfg
-    import argparse
-
-    parser = argparse.ArgumentParser(description='ecg generation')
-    parser.add_argument(
-        '--config-file',
-        default="",
-        metavar="FILE",
-        help="path to config file",
-        type=str
-    )
-
-    args = parser.parse_args()
-    if args.config_file != '':
-        cfg.merge_from_file(args.config_file)
-
-    dataset = PTBV2(cfg, 'train', transform=None)
-
-    dl = DataLoader(dataset, batch_size=32, shuffle=True, num_workers=0)
-    for index, meta in enumerate(dl):
-        print(meta['data'].shape, meta['rois'].shape, meta['input_theta'].shape, meta['target_view'].shape,
-              meta['target_theta'].shape, meta['ori_data'].shape)

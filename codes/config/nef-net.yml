@@ -1,7 +1,7 @@
 output_dir: '/data/zxs/project/ecg_tiger/output/'
 
 MODEL:
-  model: 'modelv9'
+  model: 'model_nefnet'
   jitter_factor: 2.5
   theta_L: 1
 

@@ -11,8 +11,6 @@ def PSNR(pred, gt, rois=None, shave_border=0):
         end_point = rois[i, -1, 0] if rois is not None else pred.shape[2]
         for j in range(pred.shape[1]):
             pred_single, gt_single = pred[i, j, :end_point], gt[i, j, :end_point]
-            # pred = pred[shave_border:height - shave_border, shave_border:width - shave_border]
-            # gt = gt[shave_border:height - shave_border, shave_border:width - shave_border]
             imdff = pred_single - gt_single
             rmse = math.sqrt(np.mean(imdff ** 2))
             if rmse == 0:
@@ -52,16 +50,11 @@ def compute_clf_metrics(pred_labels, gt_labels, target_label=-1):
 
     pred_labels = np.argmax(pred_labels, axis=1)
     print(np.sum(gt_labels == 0), np.sum(gt_labels == 1), np.sum(gt_labels == 2), np.sum(gt_labels == 3))
-    # print(np.unique(pred_labels), np.unique(gt_labels))
     precision = precision_score(gt_labels, pred_labels, average=None)
     recall = recall_score(gt_labels, pred_labels, average=None)
-    # f1 = f1_score(gt_labels, pred_labels, average='macro')
     acc = accuracy_score(gt_labels, pred_labels)
     result = {
         'mean_auc': np.mean(pr_auc_list),
-        # 'precision': precision,
-        # 'recall': recall,
-        # 'f1': f1,
         'acc': acc,
         'N_auc': pr_auc_list[0],
         'S_auc': pr_auc_list[1],
