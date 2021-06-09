@@ -9,7 +9,7 @@
 
 ## Introduction
 
-ECG interval labeling tool, used to label the starting and ending points of the P wave, QRS wave, and T wave of the ECG of the Tianchi dataset. 
+An ECG interval annotation tool, which is used to annotate the starting and ending points of the P waves, QRS waves, and T waves (or any keypoints you want) on the ECG data.
 
 ## How to use ?
 
