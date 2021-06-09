@@ -1,4 +1,4 @@
-![The interface of the ECG annotation tool](https://steingate.oss-cn-hangzhou.aliyuncs.com/ui_main_window.png)
+![The interface of the ECG annotation tool](https://github.com/WhatAShot/Electrocardio-Panorama/blob/main/AnnotationTools/ui_main_window.png)
 
 ## Requirements
 
