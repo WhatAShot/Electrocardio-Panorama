@@ -1,4 +1,4 @@
-![ui_main_window](https://steingate.oss-cn-hangzhou.aliyuncs.com/ui_main_window.png)
+![The interface of the ECG annotation tool](https://steingate.oss-cn-hangzhou.aliyuncs.com/ui_main_window.png)
 
 ## Requirements
 
