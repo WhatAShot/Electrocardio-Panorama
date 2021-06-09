@@ -27,14 +27,6 @@ cfg.DATA.super_mode = "normal"
 cfg.DATA.weighted_sample = False
 
 
-# gan生成相关
-cfg.DATA.select_label_str = ['N', 'S', 'V', 'F']
-cfg.DATA.add_from_gan = False
-cfg.DATA.gan_type = 'SimDCGAN'
-cfg.DATA.clf = False
-cfg.DATA.add_beat = 'S'
-cfg.DATA.add_num = 0
-
 # -----------------------------------------------------------------------------
 # MODEL
 # -----------------------------------------------------------------------------
@@ -44,6 +36,7 @@ cfg.MODEL.resume = ''
 cfg.MODEL.loss = 'v1'
 cfg.MODEL.jitter_factor = 0.0
 cfg.MODEL.theta_L = 1
+
 
 # -----------------------------------------------------------------------------
 # Solver
@@ -61,9 +54,3 @@ cfg.SOLVER.loss_using = [1, 2, 3]
 cfg.SOLVER.part_loss_no_grad = False
 cfg.SOLVER.loss_factor = [1, 1, 1]
 
-
-# -----------------------------------------------------------------------------
-# GEN
-# -----------------------------------------------------------------------------
-cfg.GEN = Node()
-cfg.GEN.MIXUP_ALPHA = 1.0
