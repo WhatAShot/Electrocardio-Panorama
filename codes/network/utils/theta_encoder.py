@@ -20,10 +20,10 @@ class ThetaEncoder(nn.Module):
         sub_theta = theta[..., 0:1] - theta[..., 1:2]
         before_encode = torch.cat([theta, sum_theta, sub_theta], dim=-1)
         out_all = [before_encode]
-        for i in range(self.encoder_len):
-            sin = torch.sin(before_encode * 2**i * self.omega)
-            cos = torch.cos(before_encode * 2**i * self.omega)
-            out_all += [sin, cos]
+        
+        sin = torch.sin(before_encode * self.omega)
+        cos = torch.cos(before_encode * self.omega)
+        out_all += [sin, cos]
 
         after_encode = torch.stack(out_all, dim=-1).view(b, lead_num, -1)
         return after_encode
