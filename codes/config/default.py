@@ -4,7 +4,8 @@ import os
 cfg = Node()
 cfg.seed = 123
 cfg.fit_msg = 'None'
-cfg.output_dir = 'data/output'
+cfg.output_dir = '{your folder}'
+cfg.latent_save_dir = '{your folder}'
 cfg.desc = 'model_v2_tianchi'
 
 # -----------------------------------------------------------------------------
