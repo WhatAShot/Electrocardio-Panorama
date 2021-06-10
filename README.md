@@ -24,12 +24,12 @@ Multi-lead electrocardiogram (ECG) provides clinical information of heartbeats f
 ## How to use?
 * Prepare your env following requirements.txt
 
-     pip install requirements.txt
+     `pip install requirements.txt`
 
 
 * train Nef-Net by
 
-    python -u main.py --config-file config/nef-net.yml
+    `python -u main.py --config-file config/nef-net.yml`
 
 ## Citation
 
