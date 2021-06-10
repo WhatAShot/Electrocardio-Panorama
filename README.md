@@ -17,8 +17,9 @@ Multi-lead electrocardiogram (ECG) provides clinical information of heartbeats f
 **Please note that an Electrocardio Panorama actually has continuous unlimited views.**
 
 ### An example on ECG data synthesis from scratch
-ECG data from sratch synthesis is just a supplementary function of our Nef-Net, but is obviously better than the previous GAN work for ECG data (e.g., SimGAN).
 ![example2](./Figures/synthesis_from_scratch.png)
+
+**ECG data from sratch synthesis is just a supplementary function of our Nef-Net, but is obviously better than the previous GAN work for ECG data (e.g., SimGAN). It is suggested that the underlying ECG information is well captured by the Nef-Net model.**
 
 ## Citation
 
