@@ -22,7 +22,12 @@ Multi-lead electrocardiogram (ECG) provides clinical information of heartbeats f
 **ECG data from sratch synthesis is just a supplementary function of our Nef-Net, but is obviously better than the previous GAN work for ECG data (e.g., SimGAN). It is suggested that the underlying ECG information is well captured by the Nef-Net model.**
 
 ## How to use?
-train Nef-Net by
+* Prepare your env following requirements.txt
+
+     pip install requirements.txt
+
+
+* train Nef-Net by
 
     python -u main.py --config-file config/nef-net.yml
 
