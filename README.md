@@ -23,6 +23,7 @@ Multi-lead electrocardiogram (ECG) provides clinical information of heartbeats f
 
 ## How to use?
 train Nef-Net by
+
     python -u main.py --config-file config/nef-net.yml
 
 ## Citation
