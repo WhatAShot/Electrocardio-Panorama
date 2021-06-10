@@ -2,7 +2,7 @@
 
 This repository contains the code and datasets for our IJCAI 2021 paper [*Electrocardio Panorama: Synthesizing New ECG views with Self-supervision*](https://arxiv.org/pdf/2105.06293.pdf).
 
-A common ECG view present the signals from **one view**, determined by the physical ECG lead position. We present a new concept called **Electrocardio Panorama**, which allows doctors to observe the ECG signals from **any viewpoints** they want. To synthesize Electrocardio Panorama, we propose a model called Nef-Net, which only requires one or few ECG views as input to synthesize the corresponding Electrocardio Panorama.
+A common ECG view present the signals from **one view**, determined by the physical ECG lead position. We present a new concept called **Electrocardio Panorama**, which allows doctors to observe the ECG signals from **any viewpoints** they want. To synthesize Electrocardio Panorama, we propose a model called Nef-Net, which only requires one or few ECG views as inputs.
 
 ## Nef-Net framework illustration
 ![Nef-Net framework](./Figures/framework.png)
