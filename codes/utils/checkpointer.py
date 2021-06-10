@@ -97,14 +97,3 @@ class CheckPointer:
 
     def has_checkpoint(self):
         return os.path.exists(os.path.join(self.save_dir, 'last_checkpoint'))
-
-
-if __name__ == '__main__':
-    from torchvision.models import resnet18
-    model = resnet18()
-    from torch import nn
-    model = nn.DataParallel(model)
-    save_dir = '/data/zxs/output/123/'
-    ckpt = CheckPointer(model, save_dir=save_dir)
-    # ckpt.save('model_epoch_010')
-    ckpt.load(resume_iter=10)
