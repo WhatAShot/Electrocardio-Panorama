@@ -25,7 +25,7 @@ Multi-lead electrocardiogram (ECG) provides clinical information of heartbeats f
 
 **The code is just for reference. Our work is only the first step to explore the Electrocardio Panorama, and we are really looking forward to future work analysing or synthesizing Electrocardio Panorama.**
 
-Also, we provide some segmentation labels on [Tianchi ECG dataset](https://tianchi.aliyun.com/competition/entrance/231754/information) and [PTB Diagnostic ECG dataset](https://www.physionet.org/content/ptbdb/1.0.0/). You can use the labels in researches on Electrocardio Panorama and other ECG academic researches. **Commercial purposes are not allowed.** As for the original ECG data and labels, please use them following their policy.
+Also, we provide some segmentation labels on [Tianchi ECG dataset](https://tianchi.aliyun.com/competition/entrance/231754/information) and [PTB Diagnostic ECG dataset](https://www.physionet.org/content/ptbdb/1.0.0/). You can use the labels in researches on Electrocardio Panorama and other ECG academic researches. We also provide an ECG segment annotation tool. **Commercial purposes are not allowed.** As for the original ECG data and labels, please use them following their policy.
 
 Please cite the paper if the codes, ECG annotation tools or the dataset labels we provided are helpful:
 
