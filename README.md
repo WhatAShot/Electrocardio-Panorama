@@ -35,5 +35,3 @@ Please cite the paper if the codes, ECG annotation tools or the dataset labels w
         booktitle = {IJCAI},
         year = {2021}
     }
-
-(To be continued)
