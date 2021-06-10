@@ -1,4 +1,4 @@
-output_dir: '/data/zxs/project/ecg_tiger/output/'
+output_dir: {your folder}
 
 MODEL:
   model: 'model_nefnet'
@@ -18,4 +18,4 @@ DATA:
   train_data_mode: 'input_fix'
   noise: False
 
-latent_save_dir: '/data/zxs/project/ecg_tiger/gen/'
+latent_save_dir: {your folder}
