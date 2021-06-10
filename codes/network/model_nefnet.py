@@ -151,7 +151,6 @@ class Model_nefnet(nn.Module):
         latent_all = torch.cat([z1_mean, z2_mean], dim=1)  # [B, 256 * 1, 128]
 
         # change z1 to shuffle choice
-        # shuffle_z1 = self.shuffle_patient_lead(z1_mean, mode='patient')
         lead_choice_z1 = random.randint(0, self.lead_num-1)
         shuffle_z1 = z1_list[lead_choice_z1]
         lead_choice_z2 = random.randint(0, self.lead_num-1)
@@ -217,19 +216,4 @@ class Model_nefnet(nn.Module):
         rest_out = torch.cat(rest_out_all, dim=1)
 
         return rest_out
-
-    def shuffle_patient_lead(self, x, mode, lead_num=None):
-        '''
-        :param x:  [B, mid_channel * 3, 64]
-        :param mode: 'patient' or 'lead'
-        :return:    [B, mid_channel * 3, 64]
-        '''
-        if mode == 'patient':
-            batch_idx = torch.randperm(x.shape[0])
-            return x[batch_idx, ...]
-        elif mode == 'lead':
-            x_list = list(torch.chunk(x, chunks=lead_num, dim=1))
-            random.shuffle(x_list)
-            return torch.cat(x_list, dim=1)
-
 
