@@ -19,7 +19,7 @@ Multi-lead electrocardiogram (ECG) provides clinical information of heartbeats f
 ### An example on ECG data synthesis from scratch
 ![example2](./Figures/synthesis_from_scratch.png)
 
-**ECG data from sratch synthesis is just a supplementary function of our Nef-Net, but is obviously better than the previous GAN work for ECG data (e.g., SimGAN). It is suggested that the underlying ECG information is well captured by the Nef-Net model.**
+**ECG data from scratch synthesis is just a supplementary function of our Nef-Net, but is obviously better than the previous GAN work for ECG data (e.g., SimGAN). It is suggested that the underlying ECG information is well captured by the Nef-Net model.**
 
 ## How to use?
 * Prepare your env following requirements.txt
