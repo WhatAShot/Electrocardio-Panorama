@@ -41,7 +41,6 @@ class CheckPointer:
         :param  best_valid: whether to resume from best valid point
         :return:
         """
-
         if self.has_checkpoint():
             if resume_iter is None or resume_iter == '':
                 # resume from best valid point
