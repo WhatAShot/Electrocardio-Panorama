@@ -1,6 +1,6 @@
 天池数据介绍页面：https://tianchi.aliyun.com/competition/entrance/231754/information
 
-PTB数据介绍页面：暂缺，由俞洪蕴提供
+PTB数据介绍页面：
 
 interval格式说明：
 
