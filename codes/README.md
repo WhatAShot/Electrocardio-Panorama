@@ -12,7 +12,10 @@ interval对于一个beat的心电数据标记6个点，分别为P波的起点终
 
 
 
-在google drive中下载我们最优的权重(https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing)，并且放置于codes/output/weight/nef_net/nef_net下
+在google drive中下载我们最优的权重(
+https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing
+
+)，并且放置于codes/output/weight/nef_net/nef_net下
 
 即
 
@@ -22,7 +25,9 @@ cp -r {your_folder}/best_valid.pkl codes/output/weight/nef_net/nef_net
 
 
 
-在https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing下载ptb数据，包含原始数据经过预处理之后的每一个心拍的数据及其interval数据，解压之后放在
+在
+https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing
+下载ptb数据，包含原始数据经过预处理之后的每一个心拍的数据及其interval数据，解压之后放在
 
 data/tianchi/npy_data/pkl_data/train_heartbeats.pkl 以及 data/tianchi/npy_data/pkl_data/test_heartbeats.pkl 即可使用ptb数据集
 
