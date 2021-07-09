@@ -1,28 +1,23 @@
-Tianchi Information：https://tianchi.aliyun.com/competition/entrance/231754/information
+## Datasets
 
-PTB Information： TBD
+Our proposed Nef-Net is performed on the [Tianchi dataset](https://tianchi.aliyun.com/competition/entrance/231754/information) and [PTB dataset](https://www.physionet.org/content/ptbdb/1.0.0/).
 
-interval data structure
+To use Tianchi dataset, one can download and use the data from the website or other mirrored links following the corresponding licence agreement.
 
-interval file is a json file，文件名跟心电数据集的原始数据命名一致，只是后缀的不同
+To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing), unzip and put them into the 
 
-interval对于一个beat的心电数据标记6个点，分别为P波的起点终点，QRS波(还是R波？以文章描述为准)的起点终点，T波的起点终点。这6个点分别对应json文件中的key：["P on", "P off", "R on", "R off", "T on", "T off"]。每个key对应的value是一个list，里面是按照时间顺序记录的对应波形特征点的所在时刻。一个心拍中的标注点的组合就构成了相应的interval。
+## On annotations
 
-标注interval尽量保证所在波形的完整性，即对于一份case，可能存在最前面跟最后面的心拍是记录不全的，对于这种心拍，不做标注。但是可能标注数据中还是有少量的interval是标注了这种波形，并且很有可能这个心拍是标注不全的，比如缺少P波的起点终点。这可以通过编写相应的数据清洗代码来解决。
+In data pre-processing and the model processing, we require the signal (waveforms) segments and cardiac cycle annotations. The annotations are provided in json files, whose file name is similar to the original ECG data file but the filename extension.
 
+In the annotation files, a cardiac cycle (heart beat) is splitted by the 6 breakpoints, whose keys are ["P on", "P off", "R on", "R off", "T on", "T off"] in the json files.
 
+Note that in the annotation, we manage to keep the integrity of a cardiac cycle. That means, we do not provides the annotations for the incomplete cardiac cycles (typically the first and last ones) in a cases (one case contains many cardiac cycles). These cardiac cycles can be removed by some pre-processing.
 
-在google drive中下载我们最优的权重(https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing)，并且放置于codes/output/weight/nef_net/nef_net下
+## Model parameters
 
-即
+A model parameter file for reference can be [downloaded](https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing) and uploaded into  `codes/output/weight/nef_net/nef_net`. Then you can run an demo example (`demo.ipynb`).
 
-cp -r {your_folder}/best_valid.pkl codes/output/weight/nef_net/nef_net
-
-运行demo.ipynb即可
-
-
-
-在https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing下载ptb数据，包含原始数据经过预处理之后的每一个心拍的数据及其interval数据，解压之后放在
 
 data/tianchi/npy_data/pkl_data/train_heartbeats.pkl 以及 data/tianchi/npy_data/pkl_data/test_heartbeats.pkl 即可使用ptb数据集
 
