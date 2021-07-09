@@ -4,7 +4,7 @@ Our proposed Nef-Net is performed on the [Tianchi dataset](https://tianchi.aliyu
 
 To use Tianchi dataset, one can download and use the data from the website or other mirrored links following the corresponding licence agreement.
 
-To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing), unzip and put them into the 
+To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing), unzip and put them (2pkl files) into the `data/tianchi/npy_data/pkl_data/`.
 
 ## On annotations
 
@@ -17,7 +17,3 @@ Note that in the annotation, we manage to keep the integrity of a cardiac cycle.
 ## Model parameters
 
 A model parameter file for reference can be [downloaded](https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing) and uploaded into  `codes/output/weight/nef_net/nef_net`. Then you can run an demo example (`demo.ipynb`).
-
-
-data/tianchi/npy_data/pkl_data/train_heartbeats.pkl 以及 data/tianchi/npy_data/pkl_data/test_heartbeats.pkl 即可使用ptb数据集
-
