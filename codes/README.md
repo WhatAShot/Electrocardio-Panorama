@@ -4,7 +4,7 @@ Our proposed Nef-Net is performed on the [Tianchi dataset](https://tianchi.aliyu
 
 To use Tianchi dataset, one can download and use the data from the website or other mirrored links following the corresponding licence agreement.
 
-To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing), unzip and put them (2pkl files) into the `data/PTB/pkl_data/`.
+To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1eAU9zeu4x4oXwe2GFnLoDaxs-EQ1TgKm/view?usp=sharing), unzip and put them (2pkl files) into the `data/PTB/pkl_data/`.
 
 ## On annotations
 
