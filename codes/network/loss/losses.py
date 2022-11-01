@@ -4,7 +4,7 @@ import torch.nn as nn
 
 class OurLoss1(torch.nn.Module):
     def __init__(self):
-        super(OurLoss1_v2, self).__init__()
+        super(OurLoss1, self).__init__()
         self.l1_loss = nn.L1Loss(reduction='mean')
 
     def forward(self, input0, input1):

@@ -4,7 +4,7 @@ Our proposed Nef-Net is performed on the [Tianchi dataset](https://tianchi.aliyu
 
 To use Tianchi dataset, one can download and use the data from the website or other mirrored links following the corresponding licence agreement.
 
-To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing), unzip and put them (2pkl files) into the `data/PTB/pkl_data/`.
+To use the PTB dataset, one can downloaded [the pre-processed data](https://drive.google.com/file/d/1eAU9zeu4x4oXwe2GFnLoDaxs-EQ1TgKm/view?usp=sharing), unzip and put them (2pkl files) into the `data/PTB/pkl_data/`.
 
 ## On annotations
 
@@ -16,4 +16,4 @@ Note that in the annotation, we manage to keep the integrity of a cardiac cycle.
 
 ## Model parameters
 
-A model parameter file for reference can be [downloaded](https://drive.google.com/file/d/1tMTY-6LOxt1gSIn4jCi1BDO3EfL6CeOe/view?usp=sharing) and uploaded into  `codes/output/weight/nef_net/nef_net`. Then you can run an demo example (`demo.ipynb`).
+A model parameter file for reference can be [downloaded](https://drive.google.com/file/d/1S6gNrIjtFH0WGjgsmEHNr4OgtDy9L3dS/view?usp=sharing) and uploaded into  `codes/output/weight/nef_net/nef_net`. Then you can run an demo example (`demo.ipynb`).
